@@ -38,5 +38,4 @@ public class CompanyEntity {
         this.cui=pojo.getCui();
         return this;
     }
-
 }
