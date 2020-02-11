@@ -17,7 +17,6 @@ public class Company {
           return dto;
       }
 
-      public  void test(){
 
-      }
+
 }
