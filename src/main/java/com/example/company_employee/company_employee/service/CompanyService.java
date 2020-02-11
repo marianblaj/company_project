@@ -31,6 +31,16 @@ public class CompanyService {
                 .collect(Collectors.toList());
     }
 
+    public void addCompany(Company company){
+        companyRepository.save(new CompanyEntity().convert2Entity(company));
+    }
+
+    public void updateCompany(String cui, Company company){
+        CompanyEntity com = companyRepository
+                .findCompanyEntityByCui(cui).orElseThrow(() -> new CompanyNotFoundException(company.getName()));
+
+    }
+
 
 
 
