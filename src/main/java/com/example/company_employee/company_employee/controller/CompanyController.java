@@ -32,4 +32,10 @@ public class CompanyController {
         return "Added company name " + company.getName();
     }
 
+    @PutMapping("/{cui}")
+    public String updateCompany(@PathVariable("cui") String cui, @RequestBody Company company){
+        companyService.updateCompany(cui, company);
+        return "Company with cui "+cui+" has been updated with "+company;
+    }
+
 }

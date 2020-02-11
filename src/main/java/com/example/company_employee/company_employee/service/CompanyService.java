@@ -38,7 +38,7 @@ public class CompanyService {
     public void updateCompany(String cui, Company company){
         CompanyEntity com = companyRepository
                 .findCompanyEntityByCui(cui).orElseThrow(() -> new CompanyNotFoundException(company.getName()));
-
+        com.convert2Entity(company);
     }
 
 
