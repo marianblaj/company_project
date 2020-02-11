@@ -39,5 +39,4 @@ public class CompanyEntity {
         return this;
     }
 
-
 }
