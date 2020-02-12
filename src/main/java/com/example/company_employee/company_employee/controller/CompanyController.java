@@ -5,6 +5,7 @@ import com.example.company_employee.company_employee.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,9 +39,10 @@ public class CompanyController {
         return "Company with cui "+cui+" has been updated with "+company;
     }
     @DeleteMapping("/{cui}")
+    @Transactional()
     public String deleteCompanyByCui(@PathVariable("cui") String cui){
         companyService.deleteCompany(cui);
-        return "Company with cui "+cui+"deletel.";
+        return "Company with cui "+cui+" deleted.";
     }
 
 }

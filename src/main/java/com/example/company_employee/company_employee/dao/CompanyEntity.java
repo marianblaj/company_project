@@ -32,7 +32,7 @@ public class CompanyEntity {
         return pojo;
     }
 
-    public CompanyEntity convert2Entity(Company pojo){
+    public CompanyEntity toEntity(Company pojo){
         this.name=pojo.getName();
         this.address=pojo.getAddress();
         this.cui=pojo.getCui();

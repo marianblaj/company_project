@@ -5,7 +5,6 @@ import com.example.company_employee.company_employee.dao.CompanyRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,13 +31,14 @@ public class CompanyService {
     }
 
     public void addCompany(Company company){
-        companyRepository.save(new CompanyEntity().convert2Entity(company));
+        companyRepository.save(new CompanyEntity().toEntity(company));
     }
 
     public void updateCompany(String cui, Company company){
         CompanyEntity com = companyRepository
                 .findCompanyEntityByCui(cui).orElseThrow(() -> new CompanyNotFoundException(company.getName()));
-        com.convert2Entity(company);
+        com.toEntity(company);
+        companyRepository.save(com);
     }
 
     public void deleteCompany(String cui){
