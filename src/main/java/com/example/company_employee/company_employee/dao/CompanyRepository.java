@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface CompanyRepository extends JpaRepository<CompanyEntity, Integer> {
     Optional<CompanyEntity> findCompanyEntityByCui(String cui);
+    Optional<CompanyEntity> deleteCompanyEntitiesByCui(String cui);
 }

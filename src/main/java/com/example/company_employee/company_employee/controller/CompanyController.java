@@ -37,5 +37,10 @@ public class CompanyController {
         companyService.updateCompany(cui, company);
         return "Company with cui "+cui+" has been updated with "+company;
     }
+    @DeleteMapping("/{cui}")
+    public String deleteCompanyByCui(@PathVariable("cui") String cui){
+        companyService.deleteCompany(cui);
+        return "Company with cui "+cui+"deletel.";
+    }
 
 }

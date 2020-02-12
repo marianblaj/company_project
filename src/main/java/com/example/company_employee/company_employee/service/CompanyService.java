@@ -41,6 +41,10 @@ public class CompanyService {
         com.convert2Entity(company);
     }
 
+    public void deleteCompany(String cui){
+        companyRepository.deleteCompanyEntitiesByCui(cui);
+    }
+
 
 
 
